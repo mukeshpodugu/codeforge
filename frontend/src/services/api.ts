@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create central axios instance
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: window.location.hostname === 'localhost' ? '/api' : 'https://codeforge-backend-1eg8.onrender.com/api',
   headers: {
     'Content-Type': 'application/json'
   }

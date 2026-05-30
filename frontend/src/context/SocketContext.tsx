@@ -23,7 +23,7 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (isAuthenticated && token) {
       // Connect to root location which will be proxied by Vite, or absolute address
       // For local testing, connect directly to backend URL
-      const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:5000' : '/';
+      const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://codeforge-backend-1eg8.onrender.com';
       
       activeSocket = io(backendUrl, {
         transports: ['websocket', 'polling'],
