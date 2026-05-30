@@ -17,9 +17,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.2",
     "socket.io": "^4.7.5",
-    "uuid": "^9.0.1"
-  },
-  "devDependencies": {
+    "uuid": "^9.0.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
@@ -28,5 +26,7 @@
     "@types/uuid": "^9.0.8",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
   }
 }
