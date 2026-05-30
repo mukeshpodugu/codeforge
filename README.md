@@ -4,6 +4,10 @@ CodeForge is a professional, production-ready coding preparation and competitive
 
 Designed to display premium software engineering practices for developer portfolios.
 
+## 🔗 Live Deployments
+- **Frontend Site (Vercel):** [https://codeforge-two-coral.vercel.app](https://codeforge-two-coral.vercel.app)
+- **Backend Server (Render):** [https://codeforge-backend-1eg8.onrender.com](https://codeforge-backend-1eg8.onrender.com)
+
 ## Developer Credentials
 - **Name:** PODUGU MUKESH
 - **Email:** [mukeshpodugu123@gmail.com](mailto:mukeshpodugu123@gmail.com)
