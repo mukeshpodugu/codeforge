@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { authStart, authSuccess, authFailure } from '../features/authSlice';
 import { authAPI } from '../services/api';
-import { Terminal, Key, Mail, ShieldAlert } from 'lucide-react';
+import { Terminal, Key, Mail, ShieldAlert, Eye, EyeOff } from 'lucide-react';
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
   const { loading, error } = useSelector((state: RootState) => state.auth);
@@ -99,13 +100,20 @@ export const Login: React.FC = () => {
                 <Key className="w-4 h-4" />
               </span>
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="block w-full pl-9 pr-3 py-2 border border-zinc-300 rounded text-sm placeholder-zinc-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
+                className="block w-full pl-9 pr-10 py-2 border border-zinc-300 rounded text-sm placeholder-zinc-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-zinc-400 hover:text-zinc-600 focus:outline-none"
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
             </div>
           </div>
 
