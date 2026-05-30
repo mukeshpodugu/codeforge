@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const aiController_1 = require("../controllers/aiController");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+router.post('/analyze-resume', auth_1.authenticateToken, aiController_1.analyzeResume);
+router.post('/interview/chat', auth_1.authenticateToken, aiController_1.chatInterview);
+router.post('/interview/result', auth_1.authenticateToken, aiController_1.saveInterviewResult);
+router.post('/roadmap', auth_1.authenticateToken, aiController_1.generateRoadmap);
+router.get('/interview/history', auth_1.authenticateToken, aiController_1.getInterviewHistory);
+exports.default = router;

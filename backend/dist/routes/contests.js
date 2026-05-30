@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const contestController_1 = require("../controllers/contestController");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+router.get('/', auth_1.authenticateToken, contestController_1.getContests);
+router.get('/:id', auth_1.authenticateToken, contestController_1.getContestDetail);
+router.post('/:id/join', auth_1.authenticateToken, contestController_1.joinContest);
+router.get('/:id/leaderboard', auth_1.authenticateToken, contestController_1.getLeaderboard);
+exports.default = router;
